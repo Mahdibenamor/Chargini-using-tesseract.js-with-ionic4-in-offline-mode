@@ -1,0 +1,46 @@
+<ion-content adding class="background">
+
+    <ion-title text-align>
+      <h1 class="tille_classe"> CHARGINI </h1>
+    </ion-title>
+
+
+
+    <div class="rectangle" (click)="ChangePayloadManual()">
+       <ion-text>
+          <h2 class="text_in_rectangle"> {{getMesage()}}</h2>
+       </ion-text>
+    </div>
+    <ng-progress [fixed]="false" [max]="100" [meteor]="false" [min]="0" [thick]="true" color="green">
+        loading
+    </ng-progress>
+
+    <ion-card *ngIf="imageData" >
+            <img  class="img" [src]="imageData" />
+    </ion-card>
+
+    <ion-grid class="ion-no-margin">
+        <ion-row>
+            <ion-col size="9"[ngStyle]="{color: 'white'}">{{progressStatus}}</ion-col>
+            <ion-col [ngStyle]="{color: 'white'}" class="ion-text-right" size="3">{{progress | percent:'1.1-1'}}</ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+<div   text-center class="custom-button">
+
+    <ion-button (click)="TakePicture()"  style="alignment-baseline: bottom" color="#ffffff">
+        <ion-icon  class="app-button" color="#ffffff"  name="camera" slot="icon-only"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="CallNow()" style="alignment-baseline: bottom" color="#ffffff">
+        <ion-icon   class="app-button" color="#ffffff"  name="call" slot="icon-only"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="clickFileSelector()" style="alignment-baseline: bottom" color="#ffffff">
+        <ion-icon   class="app-button" color="#ffffff"  name="folder-open" slot="icon-only"></ion-icon>
+    </ion-button>
+
+</div>
+</ion-content>
+
